@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(./images/bg1.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar-container {
+            background-color: #e1a3d5;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+
+
+        .card {
+            border: 4px double rgb(247, 251, 247);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: 50px auto;
+            height: 450px;
+        }
+
+        .card img {
+            display: block;
+            margin: 5px auto;
+            height: 200px;
+            width: 200px;
+            border: 4px double rgb(243, 245, 243);
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 15px 9px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 4px slid rgb(16, 17, 16);
+            border-bottom: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #fbfcfb;
+            color: rgb(22, 22, 22);
+            font-weight: bold;
+            padding: 14px 20px;
+            margin: 4px 0;
+            border: 4px solid rgb(16, 17, 16);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+            box-shadow: 1px 2px 1px 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="navbar-container">
+            <div class="navbar-container-section"><a href="./index.html">Home</a></div>
+
+        </div>
+        <div class="card">
+            <img id="random-image" src="../category.html/pic/A1.webp" alt="Random Image">
+            <br>
+            <button onclick="generateImage()">Generate Image</button>
+            <br><br>
+            <input type="text" id="image-url">
+            <br>
+            <button onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+
+
+        <!-- java scriot code -->
+
+        <script>
+            var images = [
+                "https://images.news18.com/ibnlive/uploads/2022/03/apple_ipadair.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkIAeHZr636v7lojO-HPUSn4ueN6ZhB0tCwA&usqp=CAU",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdmixnSvCLXrQv0e6jQbSoxahykUW0mfwV7A&usqp=CAU",
+                "https://www.apple.com/newsroom/images/product/ipad/standard/apple_new-ipad-air_new-design_09152020.jpg.news_app_ed.jpg"
+
+            ];
+
+            function generateImage() {
+                var randomIndex = Math.floor(Math.random() * images.length);
+                var imageUrl = " " + images[randomIndex];
+                var imageElement = document.getElementById("random-image");
+                imageElement.src = imageUrl;
+                document.getElementById("image-url").value = imageUrl;
+            }
+
+            function copyToClipboard() {
+                var copyText = document.getElementById("image-url");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+                alert("Copied to clipboard: " + copyText.value);
+            }
+        </script>
+
+        </div>
+    </body>
+
+</html>
