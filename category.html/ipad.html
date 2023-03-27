@@ -21,9 +21,7 @@
             padding: 10px;
         }
 
-        .img{
-            height: 35px;
-        }
+
 
         .card {
             border: 4px double rgb(247, 251, 247);
@@ -73,9 +71,7 @@
 
     <body>
         <div class="navbar-container">
-            <div class="navbar-container-section"><a href="../index.html"> 
-                <img src="./pic/house.png" class="img" />
-            </a></div>
+            <div class="navbar-container-section"><a href="./index.html">Home</a></div>
 
         </div>
         <div class="card">
@@ -89,10 +85,8 @@
         </div>
 
 
-        <!-- java scriot code -->
-
         <script>
-            var images = [
+            const images = [
                 "https://images.news18.com/ibnlive/uploads/2022/03/apple_ipadair.jpg",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkIAeHZr636v7lojO-HPUSn4ueN6ZhB0tCwA&usqp=CAU",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdmixnSvCLXrQv0e6jQbSoxahykUW0mfwV7A&usqp=CAU",
@@ -101,15 +95,15 @@
             ];
 
             function generateImage() {
-                var randomIndex = Math.floor(Math.random() * images.length);
-                var imageUrl = " " + images[randomIndex];
-                var imageElement = document.getElementById("random-image");
+                let randomIndex = Math.floor(Math.random() * images.length);
+                const imageUrl = " " + images[randomIndex];
+                const imageElement = document.getElementById("random-image");
                 imageElement.src = imageUrl;
                 document.getElementById("image-url").value = imageUrl;
             }
 
             function copyToClipboard() {
-                var copyText = document.getElementById("image-url");
+                const copyText = document.getElementById("image-url");
                 copyText.select();
                 copyText.setSelectionRange(0, 99999);
                 document.execCommand("copy");
