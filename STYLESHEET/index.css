@@ -33,6 +33,7 @@ color: #020101;
     padding: 5px;
     transition: all 0.4s ease-in;
     border: 1px solid rgba(0, 0, 0, 0.062);
+    background-color: whitesmoke;
     
 }
 .device-section a:hover{
@@ -61,8 +62,8 @@ color: #020101;
 }
 
 .main-image {
-    height: 600px;
-    width:1500px;
+   
+    width:100%;
     background-size: cover;
     background-position: center;
 
