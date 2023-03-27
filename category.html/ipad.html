@@ -1,11 +1,86 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>Document</title>
+
+    <link rel="stylesheet" href="./../STYLESHEET/navbar.css">
+</head>
+<style>
+
+    body{
+        background-color:#8dd6f3 ;
+    }
+    #categories-container {
+    display: block;
+    height: 40px;
+    width: 150px;
+    border-width: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    color: brown;
+    background-color:whitesmoke;
+    margin-bottom: 60px;
+    position: relative;
+  }
+    .television{
+        text-align: center;
+        margin-top: 100px;
+    }
+    .para-1{
+        font-size: larger;
+        text-align: center;
+
+    }
+    .tv{
+        align-items: center;
+        border-radius: 15px;
+        margin-left: 330px;
+    }
+    .btn{
+        height: 50px;
+        width: 210px;
+        display: block;
+        align-self: center;
+        background-color: #e30884;
+        margin: auto;
+        margin-top: 30px;
+        padding: 5px;
+        font-size: x-large;
+        color: white;
+        border-radius: 20px;
+        padding: 5px;
+        cursor: pointer;
+    }
+    
+img {
+	width: 50%;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    border-radius: 10px;
+}
+#copy-text-btn{
+    height: 80px;
+    width: 150px;
+    margin-left: 750px;
+    cursor: pointer;
+
+
+}
+#text{
+    background-color: whitesmoke;
+    display: block;
+    height: 200px;
+    width: auto;
+    margin: auto;
+}
+
     <style>
         body {
             background: url(./images/bg1.jpg) no-repeat center center fixed;
@@ -40,6 +115,7 @@
             border: 4px double rgb(243, 245, 243);
         }
 
+
         input[type=text] {
             width: 100%;
             padding: 15px 9px;
@@ -49,16 +125,8 @@
             border-bottom: 1px solid #ddd;
         }
 
-        button {
-            background-color: #fbfcfb;
-            color: rgb(22, 22, 22);
-            font-weight: bold;
-            padding: 14px 20px;
-            margin: 4px 0;
-            border: 4px solid rgb(16, 17, 16);
-            cursor: pointer;
-            width: 100%;
-        }
+
+
 
         button:hover {
             opacity: 0.8;
@@ -85,6 +153,108 @@
         </div>
 
 
+    
+
+    
+</style>
+<body>
+  <div class="navbar-container">
+    <div class="navbar-container-section"><a href="../index.html">Home</a></div>
+   
+</div>
+ <br><br>
+<form class=" all-categories">
+    <select name="drop-down" id="categories-container">
+      <option>Categories  </option>
+      <option href="#"value="laptop.html">Laptop</option>
+      <option href="#"value="mobile.html"> Mobile</option>
+      <option href="#"value="TV.html"> TV</option>
+      <option href="#"value="iPad.html"> iPad</option>
+      <option href="#"value="Camera.html" > Camera</option>
+      <option href="#"value="Headphones.html"> Headphones</option>
+      
+    </select>
+    </form>
+
+
+
+    <div class="television"><h1>Ipad</h1></div>
+    <p class="para-1"> <i>Here you can find Random Imges of Ipad</i></p>
+    <div class="flex">
+        <img src="">
+    </div>
+    
+      
+      <br>
+      <button  class="btn" onclick="generateImage()">Generate Image</button>
+      <br><br>
+      <input type="text" id="image-url">
+      <br>
+      <button onclick="copyToClipboard()">Copy to Clipboard</button>
+  
+
+    
+</body>
+<script>
+   var urlMenu = document.getElementById('categories-container');
+urlMenu.onchange = function()
+{
+var userOption = this.options[this.selectedIndex];
+if (userOption.value != "nothing")
+{
+window.open(userOption.value, "HTML CSS javascript", "");
+}
+
+}
+
+
+const imageArray = [
+"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-finish-unselect-gallery-1-202207_GEO_EMEA_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1654902551914",
+"https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-10th-gen-finish-unselect-gallery-1-202212_GEO_EMEA_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1668554661108",
+"https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg",
+"https://cdn.macstories.net/13359d69-6cbb-4ade-8a47-dc272b9a8849-1632256898935.jpeg",
+"https://techcrunch.com/wp-content/uploads/2022/03/apple-march-2022-ipad-air-m1.jpg",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2nKS5JsSeX42k4BDjv5Ut79KN0i5cHOv0hg&usqp=CAU",
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWoktNqaMItYPf1_wBBwFFyv1iyzL-MWlBaPRc-2E4yi9WAcVgZCr9y7vcYztZERZDqXw&usqp=CAU"
+  
+
+
+];
+
+
+const image = document.querySelector("img");
+const button = document.querySelector("button");
+
+window.onload = () => generateRandomPicture(imageArray);
+
+button.addEventListener("click", () => generateRandomPicture(imageArray));
+
+function generateRandomPicture(array){
+	let randomNum = Math.floor(Math.random() * array.length); 
+	image.setAttribute("src", array[randomNum]);
+}
+function copyText(htmlElemnt)
+{
+    let elementText = htmlElement.innerText;
+
+    let inputElement = document.createElement('input');
+    inputElement.setAttribute('value', elementText);
+    document.body.appendchild(inputElement);
+    inputElement.select();
+    document.execcommand('copy');
+    inputElement.parentNode.removechild(inputElement);
+
+}
+document.querySelector('#copy-text-btn').onclick = 
+function()
+{
+    copyText(document.querySelector('#text'));
+
+}
+function generateImage() {
+                var randomIndex = Math.floor(Math.random() * images.length);
+                var imageUrl = " " + images[randomIndex];
+                var imageElement = document.getElementById("random-image
         <script>
             const images = [
                 "https://images.news18.com/ibnlive/uploads/2022/03/apple_ipadair.jpg",
@@ -97,11 +267,10 @@
             function generateImage() {
                 let randomIndex = Math.floor(Math.random() * images.length);
                 const imageUrl = " " + images[randomIndex];
-                const imageElement = document.getElementById("random-image");
+                const imageElement = document.getElementById("random-imag
                 imageElement.src = imageUrl;
                 document.getElementById("image-url").value = imageUrl;
             }
-
             function copyToClipboard() {
                 const copyText = document.getElementById("image-url");
                 copyText.select();
@@ -109,9 +278,6 @@
                 document.execCommand("copy");
                 alert("Copied to clipboard: " + copyText.value);
             }
-        </script>
 
-        </div>
-    </body>
-
+</script>
 </html>

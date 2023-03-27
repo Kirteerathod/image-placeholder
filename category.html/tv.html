@@ -38,10 +38,9 @@
     }
     
 img {
-	width: 40%;
+	width: 50%;
     border-radius: 10px;
-    height: 300px;
-    width:  400px;
+    height: 400px;
 }
 
 .flex {
@@ -109,6 +108,9 @@ img {
             align-items: center;
             padding: 10px;
         }
+
+        
+
 </style>
 <body>
     <div class="navbar-container">
@@ -136,7 +138,7 @@ img {
     <button class="btn">Genrate</button>
     <br/><br/>
     <input type="text" value="https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?auto=compress&cs=tinysrgb&w=600" id="myInput" class="copy"> <br/>
-    <button class="btn2" onclick="myFunction()">Copy text</button>
+    <button class="btn2" onclick="myFunction()"> Copy  text </button>
 </body>
 <script>
      var urlMenu = document.getElementById('categories-container');
@@ -180,7 +182,8 @@ function generateRandomPicture(array){
 }
 
 
-function myFunction() {
+function myFunction() 
+{
  
  var copyText = document.getElementById("myInput");
 
@@ -195,4 +198,4 @@ function myFunction() {
  alert("Copied the text: " + copyText.value);
 }
 </script>
-</html>
+</html>s
