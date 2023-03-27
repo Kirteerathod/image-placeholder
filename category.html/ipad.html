@@ -2,30 +2,18 @@
 <head>
    
     <title>Document</title>
-
     <link rel="stylesheet" href="./../STYLESHEET/navbar.css">
+
 </head>
 <style>
 
     body{
         background-color:#8dd6f3 ;
     }
-    #categories-container {
-    display: block;
-    height: 40px;
-    width: 150px;
-    border-width: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-    color: brown;
-    background-color:whitesmoke;
-    margin-bottom: 60px;
-    position: relative;
-  }
+    
     .television{
         text-align: center;
-        margin-top: 100px;
+        margin-top: 150px;
     }
     .para-1{
         font-size: larger;
@@ -38,7 +26,7 @@
         margin-left: 330px;
     }
     .btn{
-        height: 50px;
+        height: 60px;
         width: 210px;
         display: block;
         align-self: center;
@@ -73,6 +61,21 @@ img {
 
 
 }
+.btn2{
+        height: 50px;
+        width: 160px;
+        display: block;
+        align-self: center;
+        background-color: #bedd0b;
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: x-large;
+        color: white;
+        border-radius: 7px;
+        padding: 5px;
+        cursor: pointer;
+    }
 #text{
     background-color: whitesmoke;
     display: block;
@@ -80,123 +83,61 @@ img {
     width: auto;
     margin: auto;
 }
+#myInput{
+    background-color: whitesmoke;
+    display: block;
+    height: 50px;
+    width: 500px;
+    margin: auto;
+    border-radius:12px ;
+}
+#categories-container {
+    display: block;
+    height: 40px;
+    width: 150px;
+    border-width: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    color: brown;
+    background-color:whitesmoke;
+    margin-bottom: 60px;
+    position: relative;
+  }
+ 
+        
 
-    <style>
-        body {
-            background: url(./images/bg1.jpg) no-repeat center center fixed;
-            background-size: cover;
-        }
-
-        .navbar-container {
-            background-color: #e1a3d5;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-
-
-        .card {
-            border: 4px double rgb(247, 251, 247);
-            padding: 20px;
-            text-align: center;
-            width: 300px;
-            margin: 50px auto;
-            height: 450px;
-        }
-
-        .card img {
-            display: block;
-            margin: 5px auto;
-            height: 200px;
-            width: 200px;
-            border: 4px double rgb(243, 245, 243);
-        }
-
-
-        input[type=text] {
-            width: 100%;
-            padding: 15px 9px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 4px slid rgb(16, 17, 16);
-            border-bottom: 1px solid #ddd;
-        }
-
-
-
-
-        button:hover {
-            opacity: 0.8;
-            box-shadow: 1px 2px 1px 2px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <body>
-        <div class="navbar-container">
-            <div class="navbar-container-section"><a href="./index.html">Home</a></div>
-
-        </div>
-        <div class="card">
-            <img id="random-image" src="../category.html/pic/A1.webp" alt="Random Image">
-            <br>
-            <button onclick="generateImage()">Generate Image</button>
-            <br><br>
-            <input type="text" id="image-url">
-            <br>
-            <button onclick="copyToClipboard()">Copy to Clipboard</button>
-        </div>
-
-
-    
-
-    
 </style>
 <body>
-  <div class="navbar-container">
-    <div class="navbar-container-section"><a href="../index.html">Home</a></div>
-   
-</div>
- <br><br>
-<form class=" all-categories">
-    <select name="drop-down" id="categories-container">
-      <option>Categories  </option>
-      <option href="#"value="laptop.html">Laptop</option>
-      <option href="#"value="mobile.html"> Mobile</option>
-      <option href="#"value="TV.html"> TV</option>
-      <option href="#"value="iPad.html"> iPad</option>
-      <option href="#"value="Camera.html" > Camera</option>
-      <option href="#"value="Headphones.html"> Headphones</option>
-      
-    </select>
-    </form>
-
-
-
-    <div class="television"><h1>Ipad</h1></div>
-    <p class="para-1"> <i>Here you can find Random Imges of Ipad</i></p>
+    <div class="navbar-container">
+        <div class="navbar-container-section"><a href="../index.html">Home</a></div>
+       
+    </div>
+     <br><br>
+    <form class=" all-categories">
+        <select name="drop-down" id="categories-container">
+          <option>Categories  </option>
+          <option href="#"value="laptop.html">Laptop</option>
+          <option href="#"value="mobile.html"> Mobile</option>
+          <option href="#"value="TV.html"> TV</option>
+          <option href="#"value="iPad.html"> iPad</option>
+          <option href="#"value="Camera.html" > Camera</option>
+          <option href="#"value="Headphones.html"> Headphones</option>
+          
+        </select>
+        </form>
+    <div class="television"><h1>iPads</h1></div>
+    <p class="para-1"> <i>Here you can find Random Imges of iPads </i></p>
     <div class="flex">
         <img src="">
     </div>
-    
-      
-      <br>
-      <button  class="btn" onclick="generateImage()">Generate Image</button>
-      <br><br>
-      <input type="text" id="image-url">
-      <br>
-      <button onclick="copyToClipboard()">Copy to Clipboard</button>
-  
-
-    
+    <button class="btn">Genrate</button>
+    <br/><br/>
+    <input type="text" value="https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?auto=compress&cs=tinysrgb&w=600" id="myInput" class="copy"> <br/>
+    <button class="btn2" onclick="myFunction()"> Copy url </button>
 </body>
 <script>
-   var urlMenu = document.getElementById('categories-container');
+     var urlMenu = document.getElementById('categories-container');
 urlMenu.onchange = function()
 {
 var userOption = this.options[this.selectedIndex];
@@ -215,8 +156,10 @@ const imageArray = [
 "https://cdn.macstories.net/13359d69-6cbb-4ade-8a47-dc272b9a8849-1632256898935.jpeg",
 "https://techcrunch.com/wp-content/uploads/2022/03/apple-march-2022-ipad-air-m1.jpg",
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2nKS5JsSeX42k4BDjv5Ut79KN0i5cHOv0hg&usqp=CAU",
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWoktNqaMItYPf1_wBBwFFyv1iyzL-MWlBaPRc-2E4yi9WAcVgZCr9y7vcYztZERZDqXw&usqp=CAU"
-  
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWoktNqaMItYPf1_wBBwFFyv1iyzL-MWlBaPRc-2E4yi9WAcVgZCr9y7vcYztZERZDqXw&usqp=CAU",
+"https://images.pexels.com/photos/430546/pexels-photo-430546.jpeg?auto=compress&cs=tinysrgb&w=600",
+"https://images.pexels.com/photos/2282997/pexels-photo-2282997.jpeg?auto=compress&cs=tinysrgb&w=600",
+"https://images.pexels.com/photos/5989894/pexels-photo-5989894.jpeg?auto=compress&cs=tinysrgb&w=600"
 
 
 ];
@@ -233,51 +176,24 @@ function generateRandomPicture(array){
 	let randomNum = Math.floor(Math.random() * array.length); 
 	image.setAttribute("src", array[randomNum]);
 }
-function copyText(htmlElemnt)
+
+
+
+function myFunction() 
+
 {
-    let elementText = htmlElement.innerText;
+ 
+ var copyText = document.getElementById("myInput");
 
-    let inputElement = document.createElement('input');
-    inputElement.setAttribute('value', elementText);
-    document.body.appendchild(inputElement);
-    inputElement.select();
-    document.execcommand('copy');
-    inputElement.parentNode.removechild(inputElement);
 
+ copyText.select();
+ copyText.setSelectionRange(0, 99999); 
+
+
+ navigator.clipboard.writeText(copyText.value);
+ 
+ 
+ alert("Copied the text: " + copyText.value);
 }
-document.querySelector('#copy-text-btn').onclick = 
-function()
-{
-    copyText(document.querySelector('#text'));
-
-}
-function generateImage() {
-                var randomIndex = Math.floor(Math.random() * images.length);
-                var imageUrl = " " + images[randomIndex];
-                var imageElement = document.getElementById("random-image
-        <script>
-            const images = [
-                "https://images.news18.com/ibnlive/uploads/2022/03/apple_ipadair.jpg",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkIAeHZr636v7lojO-HPUSn4ueN6ZhB0tCwA&usqp=CAU",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdmixnSvCLXrQv0e6jQbSoxahykUW0mfwV7A&usqp=CAU",
-                "https://www.apple.com/newsroom/images/product/ipad/standard/apple_new-ipad-air_new-design_09152020.jpg.news_app_ed.jpg"
-
-            ];
-
-            function generateImage() {
-                let randomIndex = Math.floor(Math.random() * images.length);
-                const imageUrl = " " + images[randomIndex];
-                const imageElement = document.getElementById("random-imag
-                imageElement.src = imageUrl;
-                document.getElementById("image-url").value = imageUrl;
-            }
-            function copyToClipboard() {
-                const copyText = document.getElementById("image-url");
-                copyText.select();
-                copyText.setSelectionRange(0, 99999);
-                document.execCommand("copy");
-                alert("Copied to clipboard: " + copyText.value);
-            }
-
 </script>
-</html>
+</html>s

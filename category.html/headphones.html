@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+    <link rel="stylesheet" href="./../STYLESHEET/navbar.css">
+</head>
+<style>
+
+    body{
+        background-color:#8dd6f3 ;
+    }
+
+    .television{
+        text-align: center;
+        margin-top: 150px;
+    }
+    .para-1{
+        font-size: larger;
+        text-align: center;
+
+    }
+    .tv{
+        align-items: center;
+        border-radius: 15px;
+        margin-left: 330px;
+    }
+    .btn{
+        height: 60px;
+        width: 210px;
+        display: block;
+        align-self: center;
+        background-color: #e30884;
+        margin: auto;
+        margin-top: 30px;
+        padding: 5px;
+        font-size: x-large;
+        color: white;
+        border-radius: 20px;
+        padding: 5px;
+        cursor: pointer;
+    }
+    
+img {
+	width: 50%;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    border-radius: 10px;
+}
+#copy-text-btn{
+    height: 80px;
+    width: 150px;
+    margin-left: 750px;
+    cursor: pointer;
+
+
+}
+.btn2{
+        height: 50px;
+        width: 160px;
+        display: block;
+        align-self: center;
+        background-color: #bedd0b;
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: x-large;
+        color: white;
+        border-radius: 7px;
+        padding: 5px;
+        cursor: pointer;
+    }
+#text{
+    background-color: whitesmoke;
+    display: block;
+    height: 200px;
+    width: auto;
+    margin: auto;
+}
+#myInput{
+    background-color: whitesmoke;
+    display: block;
+    height: 50px;
+    width: 500px;
+    margin: auto;
+    border-radius:12px ;
+}
+#categories-container {
+    display: block;
+    height: 40px;
+    width: 150px;
+    border-width: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    color: brown;
+    background-color:whitesmoke;
+    margin-bottom: 60px;
+    position: relative;
+  }
+ 
+        
+
+</style>
+<body>
+    <div class="navbar-container">
+        <div class="navbar-container-section"><a href="../index.html">Home</a></div>
+       
+    </div>
+     <br><br>
+    <form class=" all-categories">
+        <select name="drop-down" id="categories-container">
+          <option>Categories  </option>
+          <option href="#"value="laptop.html">Laptop</option>
+          <option href="#"value="mobile.html"> Mobile</option>
+          <option href="#"value="TV.html"> TV</option>
+          <option href="#"value="iPad.html"> iPad</option>
+          <option href="#"value="Camera.html" > Camera</option>
+          <option href="#"value="Headphones.html"> Headphones</option>
+          
+        </select>
+        </form>
+    <div class="television"><h1>Headphones</h1></div>
+    <p class="para-1"> <i>Here you can find Random Imges of Headphones</i></p>
+    <div class="flex">
+        <img src="">
+    </div>
+    <button class="btn">Genrate</button>
+    <br/><br/>
+    <input type="text" value="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"id="myInput" class="copy"> <br/>
+    <button class="btn2" onclick="myFunction()"> Copy url </button>
+</body>
+<script>
+     var urlMenu = document.getElementById('categories-container');
+urlMenu.onchange = function()
+{
+var userOption = this.options[this.selectedIndex];
+if (userOption.value != "nothing")
+{
+window.open(userOption.value, "HTML CSS javascript", "");
+}
+
+}
+
+
+const imageArray = [
+    "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/205926/pexels-photo-205926.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/610945/pexels-photo-610945.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/164710/pexels-photo-164710.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/844923/pexels-photo-844923.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/4887246/pexels-photo-4887246.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/3587475/pexels-photo-3587475.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/3394663/pexels-photo-3394663.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&w=600",
+ 
+];
+
+
+const image = document.querySelector("img");
+const button = document.querySelector("button");
+
+window.onload = () => generateRandomPicture(imageArray);
+
+button.addEventListener("click", () => generateRandomPicture(imageArray));
+
+function generateRandomPicture(array){
+	let randomNum = Math.floor(Math.random() * array.length); 
+	image.setAttribute("src", array[randomNum]);
+}
+
+
+ function myFunction() 
+
+ {
+ 
+
+    var copyText = document.getElementById("myInput");
+
+
+ 
+   copyText.select();
+   copyText.setSelectionRange(0, 99999); 
+
+
+ navigator.clipboard.writeText(copyText.value);
+ 
+ 
+ alert("Copied the text: " + copyText.value);
+}
+
+</script>
+</html>s

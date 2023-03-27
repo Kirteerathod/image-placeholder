@@ -9,22 +9,10 @@
     body{
         background-color:#8dd6f3 ;
     }
-    #categories-container {
-    display: block;
-    height: 40px;
-    width: 150px;
-    border-width: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-    color: brown;
-    background-color:whitesmoke;
-    margin-bottom: 60px;
-    position: relative;
-  }
+
     .television{
         text-align: center;
-        margin-top: 100px;
+        margin-top: 150px;
     }
     .para-1{
         font-size: larger;
@@ -37,7 +25,7 @@
         margin-left: 330px;
     }
     .btn{
-        height: 50px;
+        height: 60px;
         width: 210px;
         display: block;
         align-self: center;
@@ -72,6 +60,21 @@ img {
 
 
 }
+.btn2{
+        height: 50px;
+        width: 160px;
+        display: block;
+        align-self: center;
+        background-color: #bedd0b;
+        margin: auto;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: x-large;
+        color: white;
+        border-radius: 7px;
+        padding: 5px;
+        cursor: pointer;
+    }
 #text{
     background-color: whitesmoke;
     display: block;
@@ -79,62 +82,61 @@ img {
     width: auto;
     margin: auto;
 }
+#myInput{
+    background-color: whitesmoke;
+    display: block;
+    height: 50px;
+    width: 500px;
+    margin: auto;
+    border-radius:12px ;
+}
+#categories-container {
+    display: block;
+    height: 40px;
+    width: 150px;
+    border-width: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    color: brown;
+    background-color:whitesmoke;
+    margin-bottom: 60px;
+    position: relative;
+  }
+ 
+        
 
-        input[type=text] {
-            width: 100%;
-            padding: 15px 9px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 4px slid rgb(16, 17, 16);
-            border-bottom: 1px solid #ddd;
-        }
-
-
-
-    
-
-    
 </style>
 <body>
-  <div class="navbar-container">
-    <div class="navbar-container-section"><a href="./index.html">Home</a></div>
-   
-</div>
- <br><br>
-<form class=" all-categories">
-    <select name="drop-down" id="categories-container">
-      <option>Categories  </option>
-      <option href="#"value="laptop.html">Laptop</option>
-      <option href="#"value="mobile.html"> Mobile</option>
-      <option href="#"value="TV.html"> TV</option>
-      <option href="#"value="iPad.html"> iPad</option>
-      <option href="#"value="Camera.html" > Camera</option>
-      <option href="#"value="Headphones.html"> Headphones</option>
-      
-    </select>
-    </form>
-
-
-
+    <div class="navbar-container">
+        <div class="navbar-container-section"><a href="../index.html">Home</a></div>
+       
+    </div>
+     <br><br>
+    <form class=" all-categories">
+        <select name="drop-down" id="categories-container">
+          <option>Categories  </option>
+          <option href="#"value="laptop.html">Laptop</option>
+          <option href="#"value="mobile.html"> Mobile</option>
+          <option href="#"value="TV.html"> TV</option>
+          <option href="#"value="iPad.html"> iPad</option>
+          <option href="#"value="Camera.html" > Camera</option>
+          <option href="#"value="Headphones.html"> Headphones</option>
+          
+        </select>
+        </form>
     <div class="television"><h1>Mobiles</h1></div>
-    <p class="para-1"> <i>Here you can find Random Imges of mobiles</i></p>
+    <p class="para-1"> <i>Here you can find Random Imges of Mobiles</i></p>
     <div class="flex">
         <img src="">
     </div>
-    
-      
-      <br>
-      <button  class="btn" onclick="generateImage()">Generate Image</button>
-      <br><br>
-      <input type="text" id="image-url">
-      <br>
-      <button onclick="copyToClipboard()">Copy to Clipboard</button>
-  
-
-    
+    <button class="btn">Genrate</button>
+    <br/><br/>
+    <input type="text" value="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"id="myInput" class="copy"> <br/>
+    <button class="btn2" onclick="myFunction()"> Copy url </button>
 </body>
 <script>
-   var urlMenu = document.getElementById('categories-container');
+     var urlMenu = document.getElementById('categories-container');
 urlMenu.onchange = function()
 {
 var userOption = this.options[this.selectedIndex];
@@ -147,16 +149,16 @@ window.open(userOption.value, "HTML CSS javascript", "");
 
 
 const imageArray = [
-  "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+ "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   "https://images.pexels.com/photos/359757/pexels-photo-359757.jpeg?auto=compress&cs=tinysrgb&w=600",
   "https://images.pexels.com/photos/1786433/pexels-photo-1786433.jpeg?auto=compress&cs=tinysrgb&w=600",
   "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=600",
   "https://images.pexels.com/photos/1229456/pexels-photo-1229456.jpeg?cs=srgb&dl=pexels-samer-daboul-1229456.jpg&fm=jpg",
   "https://images.pexels.com/photos/40739/mobile-phone-smartphone-tablet-white-40739.jpeg?auto=compress&cs=tinysrgb&w=600",
   "https://images.pexels.com/photos/249324/pexels-photo-249324.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "https://images.pexels.com/photos/1693627/pexels-photo-1693627.jpeg?auto=compress&cs=tinysrgb&w=600"
-  
-
+  "https://images.pexels.com/photos/1693627/pexels-photo-1693627.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/3707744/pexels-photo-3707744.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "https://images.pexels.com/photos/576739/pexels-photo-576739.jpeg?auto=compress&cs=tinysrgb&w=600",
 
 ];
 
@@ -172,38 +174,26 @@ function generateRandomPicture(array){
 	let randomNum = Math.floor(Math.random() * array.length); 
 	image.setAttribute("src", array[randomNum]);
 }
-function copyText(htmlElemnt)
-{
-    let elementText = htmlElement.innerText;
 
-    let inputElement = document.createElement('input');
-    inputElement.setAttribute('value', elementText);
-    document.body.appendchild(inputElement);
-    inputElement.select();
-    document.execcommand('copy');
-    inputElement.parentNode.removechild(inputElement);
 
+ function myFunction() 
+
+ {
+ 
+
+    var copyText = document.getElementById("myInput");
+
+
+ 
+   copyText.select();
+   copyText.setSelectionRange(0, 99999); 
+
+
+ navigator.clipboard.writeText(copyText.value);
+ 
+ 
+ alert("Copied the text: " + copyText.value);
 }
-document.querySelector('#copy-text-btn').onclick = 
-function()
-{
-    copyText(document.querySelector('#text'));
-
-}
-function generateImage() {
-                var randomIndex = Math.floor(Math.random() * images.length);
-                var imageUrl = " " + images[randomIndex];
-                var imageElement = document.getElementById("random-image");
-                imageElement.src = imageUrl;
-                document.getElementById("image-url").value = imageUrl;
-            }
-            function copyToClipboard() {
-                var copyText = document.getElementById("image-url");
-                copyText.select();
-                copyText.setSelectionRange(0, 99999);
-                document.execCommand("copy");
-                alert("Copied to clipboard: " + copyText.value);
-            }
 
 </script>
-</html>
+</html>s
