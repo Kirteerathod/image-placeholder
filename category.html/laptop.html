@@ -1,13 +1,12 @@
-<html lang="en">
-<head>
-   
-    <title>Document</title>
-    <link rel="stylesheet" href="./../STYLESHEET/navbar.css">
-</head>
-<style>
+<title>Document</title>
+    <style>
+       
     body{
+        
         background-color:#8dd6f3 ;
+       
     }
+    
     .television{
         text-align: center;
         margin-top: 150px;
@@ -17,78 +16,99 @@
         text-align: center;
 
     }
-    .tv{
-        align-items: center;
-        border-radius: 15px;
-        margin-left: 330px;
-    }
-    .btn{
-        height: 60px;
+    
+    .image-container{
+        display: block;
+        width: 70%;
+        height: auto;
+        margin: 30px auto;
+        border-radius: 10px;
+        background: transparent;
+        
+
+     }
+    
+        .img-block{
+        display: block;
+        width: 50%;
+         border-radius: 10px;
+         height: 400px;
+         margin-left: auto;
+       margin-right: auto;
+        }
+
+      .btn{
+        color: white;
+        background-color:#e30884;
         width: 210px;
+        height: 60px;
+        border-radius: 20px;
         display: block;
         align-self: center;
-        background-color: #e30884;
         margin: auto;
         margin-top: 30px;
         padding: 5px;
         font-size: x-large;
-        color: white;
-        border-radius: 20px;
-        padding: 5px;
         cursor: pointer;
-    }
+       }
+
     
-img {
-	width: 50%;
-    border-radius: 10px;
-    height: 400px;
-}
+     .link-box{
+        display:flex;
+        width:100%;
+        justify-content: center;
+        height:auto;
+     }
+     .input-box{
+        width: 65%;
+        height: 40px;
+        border-radius: 10px;
+     }
+     .copy-btn{
+        color: aliceblue;
+        background-color:#5314ab;
+        border-radius: 5px;
+     }
+     .cpy-icon{
+        height: 20px;
+       
+     }
+    
+     .navbar-container {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 0px 4px 1px rgb(235, 227, 227);
+    position: sticky;
+    top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    align-items: center;
+    background: rgb(59, 225, 32);
+    background:#000066;
+   }
+  .navbar-container-section {
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    left: 100px;
+   
+   }
 
-.flex {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    border-radius: 10px;
-}
-#copy-text-btn{
-    height: 80px;
-    width: 150px;
-    margin-left: 750px;
-    cursor: pointer;
-
-
-}
-.btn2{
-        height: 50px;
-        width: 160px;
-        display: block;
-        align-self: center;
-        background-color: #bedd0b;
-        margin: auto;
-        margin-top: 10px;
-        padding: 5px;
-        font-size: x-large;
-        color: white;
-        border-radius: 7px;
-        padding: 5px;
-        cursor: pointer;
+     .navbar-container-section a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.9s ;
+    font-size:25px;
     }
-#text{
-    background-color: whitesmoke;
-    display: block;
-    height: 200px;
-    width: auto;
-    margin: auto;
-}
-#myInput{
-    background-color: whitesmoke;
-    display: block;
-    height: 50px;
-    width: 500px;
-    margin: auto;
-    border-radius:12px ;
-}
-#categories-container {
+   .navbar-container-section a:hover{
+    background-color:blue;
+   } 
+  #categories-container {
     display: block;
     height: 40px;
     width: 150px;
@@ -101,11 +121,18 @@ img {
     margin-bottom: 60px;
     position: relative;
   }
- 
-        
+  
+  .flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    border-radius: 10px;
+  }
 
-</style>
-<body>
+
+    </style>
+   </head>
+   <body>
     <div class="navbar-container">
         <div class="navbar-container-section"><a href="../index.html">Home</a></div>
        
@@ -124,19 +151,40 @@ img {
         </select>
         </form>
     <div class="television"><h1>Laptop</h1></div>
-    <p class="para-1">Here you can find Random Imges of Laptop</p>
+    <p class="para-1"> <i>Here you can find Random Imges of Laptops </i></p>
     <div class="flex">
         <img src="">
     </div>
-    <button class="btn">Genrate</button>
-    <br/><br/>
-    <input type="text" value="https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?auto=compress&cs=tinysrgb&w=600" id="myInput" class="copy"> <br/>
-    <button class="btn2" onclick="myFunction()"> Copy  text </button>
-</body>
+    <div class="main-container">
+ <div class="image-container">
+        <img src="./pic/g.jpeg" class="img-block" id="img-block">
+    <button class="btn" onclick="generator()">Generate Image</button>
+</div>
+<div class="link-box">
+    <input type="text" class="input-box" id="imagelink" value="https://images.pexels.com/photos/6893376/pexels-photo-6893376.jpeg?auto=compress&cs=tinysrgb&h=566.525&fit=crop&w=633.175&dpr=1"><button class="copy-btn" id="copy-btn"> Copy</button>
+</div>
+</div>
+
+
 <script>
-     var urlMenu = document.getElementById('categories-container');
+
+    const copybtn = document.getElementById("copy-btn");
+    copybtn.addEventListener("click",function(){
+        
+        const imgtext = document.getElementById("imagelink");
+        imgtext.select();
+        document.execCommand('copy');
+        alert("link is copied ");
+        
+    });
+
+
+
+    
+
+    var urlMenu = document.getElementById('categories-container');
 urlMenu.onchange = function()
-{
+ {
 var userOption = this.options[this.selectedIndex];
 if (userOption.value != "nothing")
 {
@@ -144,47 +192,79 @@ window.open(userOption.value, "HTML CSS javascript", "");
 }
 
 }
-const imageArray = [
-"https://images.pexels.com/photos/5614135/pexels-photo-5614135.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/5412270/pexels-photo-5412270.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/11255396/pexels-photo-11255396.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/1181248/pexels-photo-1181248.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=600",
- "https://images.pexels.com/photos/42408/pexels-photo-42408.jpeg?auto=compress&cs=tinysrgb&w=600",
 
-];
+   function generator(){
+      
+    const min =1 ;
+    const max =10;
 
-const image = document.querySelector("img");
-const button = document.querySelector("button");
+    const number = Math.floor(Math.random() * (max - min + 1)) +min;
+     const cardimg = document.getElementById("img-block");
+     const images = [
+     "https://images.pexels.com/photos/5614135/pexels-photo-5614135.jpeg?auto=compress&cs=tinysrgb&w=600",
+     "https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/5412270/pexels-photo-5412270.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "https://images.pexels.com/photos/11255396/pexels-photo-11255396.jpeg?auto=compress&cs=tinysr600",
+   "https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600",
+   "https://images.pexels.com/photos/1181248/pexels-photo-1181248.jpeg?auto=compress&cs=tinysrgb&w=600",
+   "https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=600",
+   "https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=600",
+   "https://images.pexels.com/photos/42408/pexels-photo-42408.jpeg?auto=compress&cs=tinysrgb&w=600",
 
-window.onload = () => generateRandomPicture(imageArray);
+     ];
+     cardimg.src = images[number-1];
 
-button.addEventListener("click", () => generateRandomPicture(imageArray));
+     const imglink = document.getElementById("imagelink");
+     document.getElementById("imagelink").value=number;
+     
+     
+     if(number==1)
+    {
+    
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/5614135/pexels-photo-5614135.jpeg?auto=compress&cs=tinysrgb&w=600";
+        
+    }
+    else if(number==2)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else if(number==3)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/5412270/pexels-photo-5412270.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else if(number==4)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else if(number==5)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/11255396/pexels-photo-11255396.jpeg?auto=compress&cs=tinysr600";
+    }
+    else if(number==6)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else if(number==7)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/1181248/pexels-photo-1181248.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else if(number==8)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else if(number==9)
+    {
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/441963/pexels-photo-441963.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    else{
+        document.getElementById("imagelink").value="https://images.pexels.com/photos/42408/pexels-photo-42408.jpeg?auto=compress&cs=tinysrgb&w=600";
+    }
+    }
 
-function generateRandomPicture(array){
-	let randomNum = Math.floor(Math.random() * array.length); 
-	image.setAttribute("src", array[randomNum]);
-}
 
-
-function myFunction() 
-{
- 
- var copyText = document.getElementById("myInput");
-
-
- copyText.select();
- copyText.setSelectionRange(0, 99999); 
-
-
- navigator.clipboard.writeText(copyText.value);
- 
- 
- alert("Copied the text: " + copyText.value);
-}
+   
+   
 </script>
-</html>s
+</body>
+</html>
