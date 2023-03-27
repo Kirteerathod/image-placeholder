@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:#8dd6f3 ;
+    }
+    .television{
+        text-align: center;
+        margin-top: 150px;
+    }
+    .para-1{
+        font-size: larger;
+        text-align: center;
+
+    }
+    .tv{
+        align-items: center;
+        border-radius: 15px;
+        margin-left: 330px;
+    }
+    .btn{
+        height: 60px;
+        width: 210px;
+        display: block;
+        align-self: center;
+        background-color: #e30884;
+        margin: auto;
+        margin-top: 30px;
+        padding: 5px;
+        font-size: x-large;
+        color: white;
+        border-radius: 7px;
+        padding: 5px;
+        cursor: pointer;
+    }
+    
+img {
+	width: 40%;
+    border-radius: 10px;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    border-radius: 10px;
+}
+#copy-text-btn{
+    height: 80px;
+    width: 150px;
+    margin-left: 750px;
+    cursor: pointer;
+
+
+}
+#text{
+    background-color: whitesmoke;
+    display: block;
+    height: 200px;
+    width: auto;
+    margin: auto;
+}
+</style>
+<body>
+    <div class="television"><h1>Television</h1></div>
+    <p class="para-1">Here you can find Random Imges of Television</p>
+    <div class="flex">
+        <img src="">
+    </div>
+    <button class="btn">Genrate</button>
+    
+</body>
+<script>
+const imageArray = [
+	"https://images.pexels.com/photos/1444416/pexels-photo-1444416.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/1201996/pexels-photo-1201996.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/5721908/pexels-photo-5721908.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/5721899/pexels-photo-5721899.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/2726370/pexels-photo-2726370.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/3151392/pexels-photo-3151392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+	"https://images.pexels.com/photos/4488194/pexels-photo-4488194.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/4488194/pexels-photo-4488194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+	"https://images.pexels.com/photos/4009398/pexels-photo-4009398.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/4107226/pexels-photo-4107226.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/5721881/pexels-photo-5721881.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/4107149/pexels-photo-4107149.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/6976102/pexels-photo-6976102.jpeg?auto=compress&cs=tinysrgb&w=600",
+	"https://images.pexels.com/photos/6207822/pexels-photo-6207822.jpeg?auto=compress&cs=tinysrgb&w=600"
+];
+
+const image = document.querySelector("img");
+const button = document.querySelector("button");
+
+window.onload = () => generateRandomPicture(imageArray);
+
+button.addEventListener("click", () => generateRandomPicture(imageArray));
+
+function generateRandomPicture(array){
+	let randomNum = Math.floor(Math.random() * array.length); 
+	image.setAttribute("src", array[randomNum]);
+}
+function copyText(htmlElemnt)
+{
+    let elementText = htmlElement.innerText;
+
+    let inputElement = document.createElement('input');
+    inputElement.setAttribute('value', elementText);
+    document.body.appendchild(inputElement);
+    inputElement.select();
+    document.execcommand('copy');
+    inputElement.parentNode.removechild(inputElement);
+
+}
+document.querySelector('#copy-text-btn').onclick = 
+function()
+{
+    copyText(document.querySelector('#text'));
+
+}
+</script>
+</html>
