@@ -61,8 +61,8 @@ color: #020101;
 }
 
 .main-image {
-    
-    width:100%;
+    height: 600px;
+    width:1500px;
     background-size: cover;
     background-position: center;
 
